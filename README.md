@@ -5,40 +5,46 @@ In other words, you can express React in plain old HTML, and provide
 `propTypes` to coerce attributes into the right types, such as numbers and
 booleans.
 
+## An example
 ```html
 <my-component widgets="4" boom>
   This can be <a href="#">mixed content</a>, even
   <super-em>other components!</super-em>
 </my-component>
-<script>
-  import React from 'react'
-  import PropTypes from 'prop-types'
-  import {registerComponent} from 'custom-component'
+```
 
-  registerComponent(class MyComponent extends React.Component {
-    static get propTypes() {
-      return {
-        widgets: PropTypes.number,
-        whatever: PropTypes.bool
-      }
+```
+import React from 'react'
+import PropTypes from 'prop-types'
+import {registerComponent} from 'custom-component'
+
+// it works with classes
+registerComponent(class MyComponent extends React.Component {
+  static get propTypes() {
+    return {
+      widgets: PropTypes.number,
+      whatever: PropTypes.bool
     }
+  }
 
-    render() {
-      const {widgets = 0, boom, children} = this.props
-      return (
-        <div className='MyComponent'>
-          <h1>Widgets: ${widgets}</h1>
-          {children}
-          {boom ? <strong>boom!</strong> : null}
-        </div>
-      )
-    }
-  })
+  render() {
+    const {widgets = 0, boom, children} = this.props
+    return (
+      <div className='MyComponent'>
+        <h1>Widgets: ${widgets}</h1>
+        {children}
+        {boom ? <strong>boom!</strong> : null}
+      </div>
+    )
+  }
+})
 
-  registerComponent(({children}) => <em className='super'>{children}</em>, {
-    elementName: 'super-em'
-  })
-</script>
+// and it works with functional (stateless) components, though
+// you will need to pass an elementName if your "component" is
+// an anonymous function:
+registerComponent(({children}) => <em className='super'>{children}</em>, {
+  elementName: 'super-em'
+})
 ```
 
 With any luck, you'd end up with the following in the DOM:
