@@ -23,6 +23,7 @@ export default function getChildren(nodes) {
 
 export function getPossibleComponent(element, otherProps) {
   const klass = window.customElements.get(element.localName)
+  // duck typing, woooo
   if (klass && typeof klass.component === 'function') {
     const props = Object.assign(element.props, otherProps)
     const children = getChildren(element.childNodes)
