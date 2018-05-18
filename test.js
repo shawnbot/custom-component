@@ -58,7 +58,3 @@ class CustomInner extends React.Component {
 
 registerComponent(CustomInner)
 registerComponent(CustomOuter)
-
-document.body.addEventListener('render', e => {
-  console.warn('render', e.target, e.detail)
-})

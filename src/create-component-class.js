@@ -40,8 +40,6 @@ export default function createComponentClass(component, options = {}) {
       const props = getProps(this, component.propTypes)
       const output = React.createElement(component, props, children)
       ReactDOM.render(output, this, () => {
-        const detail = {component, props, children}
-        this.dispatchEvent(new CustomEvent('render', {detail, bubbles: true}))
         replaceWith(this, this.childNodes)
       })
     }
