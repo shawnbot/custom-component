@@ -61,5 +61,5 @@ class CustomInner extends React.Component {
 }
 
 
-registerComponent(CustomInner)
 registerComponent(CustomOuter)
+registerComponent(CustomInner)
