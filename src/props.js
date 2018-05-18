@@ -40,7 +40,7 @@ export function coerceTypedValue(value, type) {
   invariant(typeof value === 'string', 'coerceTypedValue() expects a string')
   switch (type) {
     case PropTypes.bool:
-      return value === 'true'
+      return value !== 'false'
     case PropTypes.number:
       return Number(value)
     case PropTypes.string:
