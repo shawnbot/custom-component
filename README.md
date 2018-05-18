@@ -13,7 +13,7 @@ booleans.
 </my-component>
 ```
 
-```
+```jsx
 import React from 'react'
 import PropTypes from 'prop-types'
 import {registerComponent} from 'custom-component'
