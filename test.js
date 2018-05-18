@@ -22,7 +22,6 @@ class CustomOuter extends React.Component {
 class CustomInner extends React.Component {
   constructor() {
     super()
-    this.toggle = this.toggle.bind(this)
     this.state = {
       active: false
     }
@@ -30,22 +29,28 @@ class CustomInner extends React.Component {
 
   static get propTypes() {
     return {
-      p: PropTypes.number
+      p: PropTypes.number,
+      small: PropTypes.bool,
+      prompt: PropTypes.string
     }
   }
 
   toggle() {
-    console.warn('toggle:', this.state)
     this.setState({active: !this.state.active})
   }
 
   render() {
-    const {p, children} = this.props
     const {active} = this.state
+    const {
+      p,
+      small,
+      prompt = 'click me',
+      children
+    } = this.props
     return (
-      <span className={`border rounded-1 p-${p}`}>
-        <button type='button' onClick={this.toggle} ref={b => console.warn('button', b)}>
-          click me
+      <span className={`border rounded-1 p-${p}${small ? ' text-small' : ''}`}>
+        <button type='button' onClick={e => this.toggle()}>
+          {prompt}
         </button>
         <div hidden={!active}>
           {children}
