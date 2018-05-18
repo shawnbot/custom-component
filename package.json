@@ -1,0 +1,28 @@
+{
+  "name": "custom-component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel serve test.html",
+    "build": "parcel build test.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-custom-element-classes": "^0.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^22.4.3",
+    "parcel": "^1.8.1",
+    "rollup": "^0.59.1",
+    "rollup-plugin-babel": "^3.0.4"
+  }
+}

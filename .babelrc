@@ -1,0 +1,6 @@
+{
+   "presets" : ["env", "react"],
+   "plugins": [
+     ["transform-custom-element-classes"]
+   ]
+}
