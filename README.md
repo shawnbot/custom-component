@@ -71,11 +71,13 @@ This is, as should be obvious from the lack of documentation, an experiment.
 - [x] `registerComponent(ReactComponent)` registers `<react-component>`
   automagically.
 - [x] Once rendered, component output replaces the custom element in the DOM.
+- [ ] Tests?
 - [ ] Figure out how to work around the issue of rendering elements "owned"
   (already rendered) by a higher-level component.
 - [ ] The highest-level component is assumed to manage state, and is
   responsible for re-rendering.
-- [ ] Maybe [portals] are the thing? ¯\\\_(ツ)_/¯ 
+- [ ] Maybe [portals] are the thing? ¯\\\_(ツ)_/¯
+- [ ] 💰
 
 
 [custom elements]: https://developers.google.com/web/fundamentals/web-components/customelements
